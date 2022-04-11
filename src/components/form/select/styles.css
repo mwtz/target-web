@@ -1,0 +1,14 @@
+.Select select {
+    background-color: transparent;
+    border: 1px solid var(--color-light-black);
+    box-sizing: border-box;
+    font-size: 16px;
+    padding: 0.8rem;
+    width: 100%;
+  }
+  
+  .Select select.error {
+    margin-top: 5px;
+    border: 1px solid var(--color-red);
+  }
+  
