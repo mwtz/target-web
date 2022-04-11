@@ -13,7 +13,7 @@ import useTranslation from 'hooks/useTranslation';
 import useAuth from 'hooks/useAuth';
 import { api } from 'services/api';
 import { useSignupMutation } from 'services/auth/auth';
-import { PASSWORD_REGEX } from 'constants/constants';
+import { GENDER_OPTIONS, PASSWORD_REGEX } from 'constants/constants';
 import MobileSample from 'components/mobileSample/index';
 
 import './styles.css';
@@ -98,7 +98,7 @@ const Signup = () => {
             name="password"
             error={errors.password}
             handleFocus={handleFocus}
-            placeholder="MIN. 6 CHARACTERS LONG"
+            placeholder={t('signup.labels.passwordPlaceholder')}
           />
 
           <label htmlFor="password">{t('signup.labels.passwordConfirmation')}</label>
@@ -113,9 +113,9 @@ const Signup = () => {
           <label htmlFor="gender">{t('signup.labels.gender')}</label>
           <Select
             name="gender"
-            options={['female', 'male', 'other']}
+            options={[...GENDER_OPTIONS]}
             register={register}
-            placeholder="SELECT YOUR GENDER"
+            placeholder={t('signup.labels.genderPlaceholder')}
             error={errors.gender}
             className="gender"
           />

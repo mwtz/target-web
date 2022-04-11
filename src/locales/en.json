@@ -15,8 +15,10 @@
       "name": "Name",
       "email": "Email",
       "password": "Password",
+      "passwordPlaceholder":"MIN. 6 CHARACTERS LONG",
       "passwordConfirmation": "Confirm password",
-      "gender": "Gender"
+      "gender": "Gender",
+      "genderPlaceholder":"SELECT YOUR GENDER"
     },
     "errors": {
       "nameMsg": "Must provide a name",

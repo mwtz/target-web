@@ -1,6 +1,7 @@
-.container{
+.container {
   display: flex;
 }
+s
 .form {
   background-color: var(--color-light-grey);
   color: var(--color-black);
@@ -11,6 +12,7 @@
   text-transform: uppercase;
   text-align: center;
 }
+
 .form h1 {
   font-size: var(--font-size-title);
   font-weight: bold;
@@ -20,14 +22,16 @@
 }
 
 .form form {
-  width: 180px;
   max-width: 20rem;
+  width: 180px;
 }
-.form Input{
+
+.form Input {
+  background-color: transparent;
   font-size: var(--font-size-1);
   margin-bottom: 17px;
-  background-color: transparent;
 }
+
 .form label {
   font-size: var(--font-size-2);
   font-weight: 600;
@@ -65,20 +69,19 @@
   line-height: 12.89px;
 }
 
-.form .to-sign-in{
-  border-top: .5px solid var(--color-black);
+.form .to-sign-in {
+  border-top: 0.5px solid var(--color-black);
   color: var(--color-black);
   margin-top: 20px;
   padding-top: 10px;
   width: 120px;
 }
 
-.form .gender{
-    margin-bottom: 30px;
-    box-sizing: border-box;
-    padding: 0.8rem;
-    -moz-appearance: none;
-    -webkit-appearance: none;  font-size: var(--font-size-1);
-
-    
+.form .gender {
+  margin-bottom: 30px;
+  box-sizing: border-box;
+  padding: 0.8rem;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  font-size: var(--font-size-1);
 }
