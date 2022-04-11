@@ -3,7 +3,7 @@ import cn from 'classnames';
 import './styles.css';
 
 const Select = ({ register, options, name, error, placeholder, className = '', ...rest }) => (
-  <div className="Select">
+  <div className="select">
     <select {...register(name)} {...rest} className={cn(className)}>
       <option value="" disabled selected className="placeholder">
         {placeholder}
