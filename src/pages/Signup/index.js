@@ -16,7 +16,7 @@ import { useSignupMutation } from 'services/auth/auth';
 import { GENDER_OPTIONS, PASSWORD_REGEX } from 'constants/constants';
 import MobileSample from 'components/mobileSample/index';
 
-import './styles.css';
+import './styles.scss';
 
 const Signup = () => {
   const t = useTranslation();
@@ -47,7 +47,6 @@ const Signup = () => {
   } = useForm({ resolver: zodResolver(schema) });
 
   const onSubmit = data => {
-    console.log(data);
     signup(data);
   };
 

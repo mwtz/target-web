@@ -1,0 +1,22 @@
+$color-black: #1f1f1f;
+$color-light-black: #303030;
+$color-light-grey: #f2f2f2;
+$color-white: #fff;
+$color-red: #dd0000;
+$color-light-blue: #2fbcf7;
+$box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
+
+$font-size-1: 10px;
+$font-size-2: 11px;
+$font-size: 14px;
+$font-size-title: 20px;
+$font-size-error: 11px;
+$font-size-button: 18px;
+
+$html-font-size: 16px;
+@function stripUnit($value) {
+  @return $value / ($value * 0 + 1);
+}
+@function rem($pxValue) {
+  @return #{stripUnit($pxValue) / stripUnit($html-font-size)}rem;
+}

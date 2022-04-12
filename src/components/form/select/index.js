@@ -1,6 +1,7 @@
 import { string, func } from 'prop-types';
 import cn from 'classnames';
-import './styles.css';
+
+import './styles.scss';
 
 const Select = ({ register, options, name, error, placeholder, className = '', ...rest }) => (
   <div className="select">

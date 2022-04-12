@@ -1,8 +1,9 @@
-import './styles.css';
 import mobilesample from 'assets/i6.svg';
 import playStorebutton from 'assets/appstore-button.svg';
 import twitterIcon from 'assets/twitter-logo.svg';
 import facebookIcon from 'assets/facebook-logo.svg';
+
+import './styles.scss';
 
 const MobileSample = () => {
   return (
