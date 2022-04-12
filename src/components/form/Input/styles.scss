@@ -1,0 +1,14 @@
+@import 'styles/styles.scss';
+
+.Input input {
+  border: 1px solid $color-light-black;
+  box-sizing: border-box;
+  font-size: 16px;
+  padding: 0.8rem;
+  width: 100%;
+}
+
+.Input input.error {
+  margin-top: 5px;
+  border: 1px solid $color-red;
+}
