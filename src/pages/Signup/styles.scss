@@ -15,14 +15,14 @@
     h1 {
       font-size: $font-size-title;
       font-weight: bold;
-      line-height: 23.44px;
-      margin-bottom: 38px;
+      line-height: rem(23.44px);
+      margin-bottom: rem(38px);
       margin-top: rem(100px);
     }
 
     form {
-      max-width: 20rem;
-      width: 180px;
+      max-width: rem(20rem);
+      width: rem(180px);
     }
 
     Input {
@@ -34,7 +34,7 @@
     label {
       font-size: $font-size-2;
       font-weight: 600;
-      line-height: 13px;
+      line-height: rem(13px);
     }
 
     .button-container {
@@ -46,7 +46,7 @@
     a {
       color: $color-light-blue;
       font-size: $font-size;
-      margin-top: 0.8rem;
+      margin-top: rem(5px);
       text-decoration: none;
     }
 
@@ -57,7 +57,7 @@
     .error-message {
       color: $color-red;
       display: block;
-      margin-top: 0.3rem;
+      margin-top: rem(5px);
       font-size: $font-size-error;
       text-transform: none;
     }
@@ -65,7 +65,7 @@
       text-transform: uppercase;
       font-weight: 600;
       font-size: $font-size-2;
-      line-height: 12.89px;
+      line-height: rem(12.89px);
     }
 
     .to-sign-in {
@@ -79,7 +79,7 @@
     .gender {
       margin-bottom: rem(30px);
       box-sizing: border-box;
-      padding: 0.8rem;
+      padding: rem(5px);
       -moz-appearance: none;
       -webkit-appearance: none;
       font-size: $font-size-1;
