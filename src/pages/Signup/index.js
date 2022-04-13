@@ -67,7 +67,7 @@ const Signup = () => {
   }
 
   return (
-    <div className="container">
+    <div className="signup-container">
       <div className="form">
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
           <h1>{t('signup.title')}</h1>
