@@ -15,7 +15,7 @@
     h1 {
       font-size: $font-size-title;
       font-weight: bold;
-      line-height: 23.44px;
+      line-height: rem(23.44px);
       margin-top: rem(100px);
     }
     h2 {
@@ -30,7 +30,7 @@
     label {
       font-size: $font-size-2;
       font-weight: 600;
-      line-height: 13px;
+      line-height: rem(13px);
       margin-bottom: rem(5px);
       text-transform: uppercase;
     }
@@ -61,7 +61,7 @@
         text-transform: uppercase;
         font-weight: 600;
         font-size: $font-size-2;
-        line-height: 12.89px;
+        line-height: rem(12.89px);
       }
 
       a {
@@ -94,7 +94,7 @@
 
     .email-signup {
       width: rem(121px);
-      border-top: 0.5px solid $color-black;
+      border-top: rem(0.5px) solid $color-black;
       font-size: $font-size-2;
       font-weight: 600;
     }
