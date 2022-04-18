@@ -4,7 +4,7 @@ import cn from 'classnames';
 import './styles.scss';
 
 const Input = ({ register, type = 'text', name, error, handleFocus, placeholder = '' }) => (
-  <div className="Input">
+  <div className="d-flex flex-column text-center Input">
     <input
       className={cn({ error })}
       type={type}

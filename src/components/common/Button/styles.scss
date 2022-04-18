@@ -1,0 +1,21 @@
+@import 'styles/styles.scss';
+
+.button {
+  background-color: $color-black;
+  border: none;
+  color: $color-white;
+  font-size: $font-size-button;
+  margin: 0.3rem 0;
+  padding: 0.8rem;
+  width: 100%;
+
+  &:hover {
+    background-color: $color-light-black;
+    cursor: pointer;
+  }
+
+  &:disabled {
+    background-color: $color-light-grey;
+    cursor: unset;
+  }
+}
