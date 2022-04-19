@@ -1,0 +1,15 @@
+.home {
+  text-align: center;
+  height: 100vh;
+
+  .home__logout {
+    margin: auto;
+    max-width: 15rem;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .home__logo {
+      animation: Home-logo infinite 20s linear;
+    }
+  }
+}
