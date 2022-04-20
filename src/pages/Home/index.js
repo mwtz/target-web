@@ -1,6 +1,5 @@
 import Button from 'components/common/Button';
 import MapView from 'components/mapView';
-import useGeoLocation from 'hooks/useGeolocation';
 import useTranslation from 'hooks/useTranslation';
 import { useLogoutMutation } from 'services/auth/auth';
 
@@ -11,11 +10,10 @@ const Home = () => {
   const [logout, { isLoading }] = useLogoutMutation();
 
   const handleLogout = () => logout().then(() => localStorage.removeItem('user'));
-  const location = useGeoLocation();
 
   return (
     <div className="home">
-      <MapView location={location} />
+      <MapView />
       <div className="home__logout">
         <Button handleClick={handleLogout} disabled={isLoading}>
           {t('home.logoutBtn')}
