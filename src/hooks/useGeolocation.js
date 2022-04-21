@@ -21,6 +21,7 @@ const useGeoLocation = () => {
     setLocation({
       loaded: false,
       error,
+      coordinates: { lat: '', lon: '' },
     });
   };
 
