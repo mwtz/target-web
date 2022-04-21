@@ -1,24 +1,13 @@
-import Button from 'components/common/Button';
 import MapView from 'components/mapView';
-import useTranslation from 'hooks/useTranslation';
-import { useLogoutMutation } from 'services/auth/auth';
+import Sidebar from 'components/sidebar';
 
 import './styles.scss';
 
 const Home = () => {
-  const t = useTranslation();
-  const [logout, { isLoading }] = useLogoutMutation();
-
-  const handleLogout = () => logout().then(() => localStorage.removeItem('user'));
-
   return (
     <div className="home">
+      <Sidebar />
       <MapView />
-      <div className="home__logout">
-        <Button handleClick={handleLogout} disabled={isLoading}>
-          {t('home.logoutBtn')}
-        </Button>
-      </div>
     </div>
   );
 };

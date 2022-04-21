@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { MapContainer, Marker, TileLayer } from 'react-leaflet';
 import { Icon } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -18,12 +18,25 @@ const userLocationIcon = new Icon({
 const center = [-38.0174106, -57.6705735];
 
 const MapView = () => {
+  const mapRef = useRef();
   const location = useGeoLocation();
   const { lat, lon } = location?.coordinates;
 
+  useEffect(() => {
+    if (location.loaded && !location.error) {
+      mapRef.current.flyTo([lat, lon], 16);
+    }
+  }, [location, lat, lon]);
+
   return (
     <>
-      <MapContainer className="map-container" center={center} zoom={13} scrollWheelZoom={true}>
+      <MapContainer
+        className="map-container"
+        center={center}
+        zoom={13}
+        scrollWheelZoom={true}
+        ref={mapRef}
+      >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

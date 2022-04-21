@@ -3,9 +3,12 @@
     "pageTitle": "RS React Redux Base"
   },
   "home": {
-    "welcomeMsg": "Welcome to React Redux Base",
-    "logoAltMsg": "React logo",
-    "logoutBtn": "Logout"
+    "welcomeMsg": "Welcome to TARGET",
+    "title": "Find people near you & Connect",
+    "textItem1": "Create a target by clicking wherever on the map, specify the ratio and and a topic: Travel, Dating, Music, etc.",
+    "textItem2": "TARGET will start a chat whenever you've a match. You can always dismiss a conversation if you're not interested.",
+    "logoutBtn": "Logout",
+    "gotitBtn": "OK; GOT IT!"
   },
   "signup": {
     "title": "Sign up",
@@ -32,7 +35,7 @@
   "login": {
     "title": "TARGET MVD",
     "subtitle":"Find people near you & Connect",
-    "loginMsg": "Create a  target  wherever on the map, specify your interest: Travel, Dating, Music, etc and start conecting with others who share your interest.",
+    "loginMsg": "Create a target wherever on the map, specify your interest: Travel, Dating, Music, etc and start conecting with others who share your interest.",
     "dontHaveAccountMsg": "SIGN UP",
     "facebookSignup":"CONNECT WITH FACEBOOK",
     "forgotPasswordMsg": "Forgot your password?",
