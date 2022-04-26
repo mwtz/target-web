@@ -1,0 +1,85 @@
+@import 'styles/styles.scss';
+
+.profile-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: rem(20px);
+  max-width: rem(357px);
+  padding: rem(20px);
+
+  .title {
+    font-size: $font-size-title;
+    font-weight: bold;
+    letter-spacing: rem(3px);
+    line-height: rem(23.44px);
+    text-transform: uppercase;
+  }
+
+  .avatar-img {
+    margin-top: rem(12px);
+    width: rem(120px);
+  }
+  .username {
+    font-size: $font-size;
+    font-weight: 600;
+    margin: 1rem auto 0.6rem;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+    margin-bottom: rem(30px);
+    .edit-profile {
+      color: $color-light-blue;
+      font-size: $font-size-3;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .slash,
+    .logout {
+      background: none;
+      cursor: pointer;
+      border: none;
+      font-size: $font-size-3;
+      margin-left: rem(7px);
+      text-transform: none;
+    }
+  }
+  .separator {
+    border-top: rem(1px) solid $color-black;
+    margin-bottom: rem(55px);
+    width: rem(121px);
+  }
+
+  .subtitle {
+    font-size: $font-size-subtitle;
+    font-weight: 600;
+    line-height: rem(32px);
+  }
+  .suggestion {
+    font-weight: 600;
+    font-size: $font-size;
+    line-height: rem(32px);
+    margin-top: rem(55px);
+  }
+  .list {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: rem(80px);
+    .list-item {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      margin-bottom: rem(25px);
+    }
+    .list-text {
+      margin-left: rem(20px);
+      margin-bottom: rem(4px);
+    }
+  }
+  .smiles {
+    width: rem(48px);
+  }
+}

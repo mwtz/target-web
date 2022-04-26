@@ -48,5 +48,21 @@
       "emailMsg": "Must provide an email",
       "passwordMsg": "Must provide a password"
     }
+  },
+  "newTarget": {
+    "header":"CREATE TARGET ",
+    "title": "CREATE NEW TARGET",
+    "save": "SAVE TARGET",
+    "labels": {
+      "areaLabel":"SPECIFY AREA LENGHT",
+      "targetTitle":"TARGET TITLE",
+      "topic":"SELECT A TOPIC",
+      "topicPlaceholder" : "What do you want to talk about?"
+    },
+    "errors": {
+      "area": "Must provide a valid area",
+      "topic": "Must provide a topic",
+      "title": "Must provide a title"
+    }
   }
 }
