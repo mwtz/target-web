@@ -1,88 +1,83 @@
 @import 'styles/styles.scss';
 
-.signup-container {
+.form {
+  background-color: $color-light-grey;
+  color: $color-black;
   display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 50vw;
+  text-transform: uppercase;
+  text-align: center;
+  h1 {
+    font-size: $font-size-title;
+    font-weight: bold;
+    line-height: rem(23.44px);
+    margin-bottom: rem(38px);
+    margin-top: rem(100px);
+  }
 
-  .form {
-    background-color: $color-light-grey;
-    color: $color-black;
+  form {
+    width: rem(180px);
+  }
+
+  Input {
+    background-color: transparent;
+    font-size: $font-size-1;
+    margin-bottom: rem(17px);
+  }
+
+  label {
+    font-size: $font-size-2;
+    font-weight: 600;
+    line-height: rem(13px);
+  }
+
+  .button-container {
     display: flex;
-    justify-content: center;
-    height: 100vh;
-    width: 50vw;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  a {
+    color: $color-light-blue;
+    font-size: $font-size;
+    margin-top: rem(5px);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .error-message {
+    color: $color-red;
+    display: block;
+    margin-top: rem(5px);
+    font-size: $font-size-error;
+    text-transform: none;
+  }
+  .button {
     text-transform: uppercase;
-    text-align: center;
-    h1 {
-      font-size: $font-size-title;
-      font-weight: bold;
-      line-height: rem(23.44px);
-      margin-bottom: rem(38px);
-      margin-top: rem(100px);
-    }
+    font-weight: 600;
+    font-size: $font-size-2;
+    line-height: rem(12.89px);
+  }
 
-    form {
-      max-width: rem(20rem);
-      width: rem(180px);
-    }
+  .to-sign-in {
+    border-top: rem(0.5px) solid $color-black;
+    color: $color-black;
+    margin-top: rem(20px);
+    padding-top: rem(10px);
+    width: rem(120px);
+  }
 
-    Input {
-      background-color: transparent;
-      font-size: $font-size-1;
-      margin-bottom: rem(17px);
-    }
-
-    label {
-      font-size: $font-size-2;
-      font-weight: 600;
-      line-height: rem(13px);
-    }
-
-    .button-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    a {
-      color: $color-light-blue;
-      font-size: $font-size;
-      margin-top: rem(5px);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .error-message {
-      color: $color-red;
-      display: block;
-      margin-top: rem(5px);
-      font-size: $font-size-error;
-      text-transform: none;
-    }
-    .button {
-      text-transform: uppercase;
-      font-weight: 600;
-      font-size: $font-size-2;
-      line-height: rem(12.89px);
-    }
-
-    .to-sign-in {
-      border-top: rem(0.5px) solid $color-black;
-      color: $color-black;
-      margin-top: rem(20px);
-      padding-top: rem(10px);
-      width: rem(120px);
-    }
-
-    .gender {
-      margin-bottom: rem(30px);
-      box-sizing: border-box;
-      padding: rem(5px);
-      -moz-appearance: none;
-      -webkit-appearance: none;
-      font-size: $font-size-1;
-    }
+  .gender {
+    margin-bottom: rem(30px);
+    box-sizing: border-box;
+    padding: rem(5px);
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    font-size: $font-size-1;
   }
 }
