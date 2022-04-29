@@ -9,11 +9,14 @@ const Select = ({ register, options, name, error, placeholder, className = '', .
       <option value="" disabled selected className="placeholder">
         {placeholder}
       </option>
-      {options.map((value, i) => (
-        <option key={i} value={value}>
-          {value.label ? value.label : value}
-        </option>
-      ))}
+      {options.map((value, i) => {
+        console.log(value);
+        return (
+          <option key={i} value={value.topic ? value.topic.id : value}>
+            {value.topic ? value.topic.label : value}
+          </option>
+        );
+      })}
     </select>
     <small className="error-message">{error?.message}</small>
   </div>
