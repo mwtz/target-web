@@ -13,8 +13,13 @@ import newTarget from 'assets/newTarget.svg';
 import smiles from 'assets/smilies.svg';
 
 import './styles.scss';
+import useTopics from 'hooks/useTopics';
 const CreateTarget = () => {
   const t = useTranslation();
+
+  const { topics } = useTopics();
+  console.log(topics);
+
   const schema = z.object({
     area: z.string().nonempty({ message: t('newTarget.errors.area') }),
     title: z.string().nonempty({ message: t('newTarget.errors.title') }),
@@ -56,7 +61,7 @@ const CreateTarget = () => {
           <label htmlFor="topic">{t('newTarget.labels.topic')}</label>
           <Select
             name="topic"
-            options={[...TARGET_TOPICS]}
+            options={[...topics]}
             register={register}
             placeholder={t('newTarget.labels.topicPlaceholder')}
             error={errors.topic}
