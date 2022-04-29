@@ -60,7 +60,7 @@ const CreateTarget = () => {
           <label htmlFor="topic">{t('newTarget.labels.topic')}</label>
           <Select
             name="topic"
-            options={[...topics]}
+            options={topics}
             register={register}
             placeholder={t('newTarget.labels.topicPlaceholder')}
             error={errors.topic}

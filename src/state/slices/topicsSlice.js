@@ -11,7 +11,7 @@ const topicsSlice = createSlice({
   extraReducers: builder => {
     builder.addMatcher(isAnyOf(topicsFulfilled), (_state, { payload: { topics } }) => {
       return {
-        topics,
+        topics: topics.map(topic => topic.topic),
       };
     });
   },
