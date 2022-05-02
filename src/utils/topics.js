@@ -1,11 +1,7 @@
 import { Icon } from 'leaflet';
 
 import food from 'assets/food.svg';
-<<<<<<< HEAD
 import footballMap from 'assets/footballMap.svg';
-=======
-import footballMap from 'assets/footballmap.svg';
->>>>>>> 461a06338533076b6047f93d2f44beeae4a50704
 import musicMap from 'assets/musicMap.svg';
 import series from 'assets/series.svg';
 import dating from 'assets/dating.svg';
@@ -85,14 +81,15 @@ export const politicsIcon = new Icon({
   iconSize: [53, 69],
 });
 
-export const ICONS_MAP = new Map();
-ICONS_MAP.set(11, emptyOval);
-ICONS_MAP.set(12, emptyOval);
-ICONS_MAP.set(2, footballIcon);
-ICONS_MAP.set(13, politicsIcon);
-ICONS_MAP.set(14, artIcon);
-ICONS_MAP.set(15, datingIcon);
-ICONS_MAP.set(16, musicIcon);
-ICONS_MAP.set(17, moviesIcon);
-ICONS_MAP.set(19, foodIcon);
-ICONS_MAP.set(18, seriesIcon);
+export const ICONS_MAP = new Map([
+  [11, emptyOvalIcon],
+  [12, emptyOvalIcon],
+  [2, footballIcon],
+  [13, politicsIcon],
+  [14, artIcon],
+  [15, datingIcon],
+  [16, musicIcon],
+  [17, moviesIcon],
+  [19, foodIcon],
+  [18, seriesIcon],
+]);
