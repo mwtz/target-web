@@ -1,7 +1,7 @@
 import { Icon } from 'leaflet';
 
 import food from 'assets/food.svg';
-import footballMap from 'assets/footballmap.svg';
+import footballMap from 'assets/footballMap.svg';
 import musicMap from 'assets/musicMap.svg';
 import series from 'assets/series.svg';
 import dating from 'assets/dating.svg';
