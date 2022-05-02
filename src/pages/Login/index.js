@@ -13,7 +13,6 @@ import useTranslation from 'hooks/useTranslation';
 import routesPaths from 'routes/routesPaths';
 import Input from 'components/form/Input';
 import Button from 'components/common/Button';
-import MobileSample from 'components/mobileSample/index';
 import smileIcon from 'assets/smilies.svg';
 
 import './styles.scss';
@@ -106,7 +105,6 @@ const Login = () => {
           </Link>
         </div>
       </div>
-      <MobileSample />
     </div>
   );
 };

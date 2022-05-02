@@ -5,6 +5,7 @@ import RouteFromPath from 'components/routes/RouteFromPath';
 import useTranslation from 'hooks/useTranslation';
 import useAuth from 'hooks/useAuth';
 import routes from 'routes';
+import MainLayout from 'components/common/mainLayout/MainLayout';
 
 function App() {
   const t = useTranslation();
@@ -16,11 +17,13 @@ function App() {
         <title>{t('global.pageTitle')}</title>
       </Helmet>
       <BrowserRouter>
-        <Switch>
-          {routes.map(route => (
-            <RouteFromPath key={`route-${route.path}`} {...route} authenticated={authenticated} />
-          ))}
-        </Switch>
+        <MainLayout>
+          <Switch>
+            {routes.map(route => (
+              <RouteFromPath key={`route-${route.path}`} {...route} authenticated={authenticated} />
+            ))}
+          </Switch>
+        </MainLayout>
       </BrowserRouter>
     </>
   );

@@ -14,7 +14,6 @@ import useAuth from 'hooks/useAuth';
 import { api } from 'services/api';
 import { useSignupMutation } from 'services/auth/auth';
 import { GENDER_OPTIONS, PASSWORD_REGEX } from 'constants/constants';
-import MobileSample from 'components/mobileSample/index';
 
 import './styles.scss';
 
@@ -67,73 +66,70 @@ const Signup = () => {
   }
 
   return (
-    <div className="signup-container">
-      <div className="form">
-        <form onSubmit={handleSubmit(onSubmit)} noValidate>
-          <h1>{t('signup.title')}</h1>
-          <label htmlFor="name">{t('signup.labels.name')}</label>
-          <Input
-            className="input"
-            register={register}
-            type="text"
-            name="name"
-            error={errors.name}
-            handleFocus={handleFocus}
-          />
+    <div className="form">
+      <form onSubmit={handleSubmit(onSubmit)} noValidate>
+        <h1>{t('signup.title')}</h1>
+        <label htmlFor="name">{t('signup.labels.name')}</label>
+        <Input
+          className="input"
+          register={register}
+          type="text"
+          name="name"
+          error={errors.name}
+          handleFocus={handleFocus}
+        />
 
-          <label htmlFor="email">{t('signup.labels.email')}</label>
-          <Input
-            register={register}
-            type="email"
-            name="email"
-            error={errors.email}
-            handleFocus={handleFocus}
-          />
+        <label htmlFor="email">{t('signup.labels.email')}</label>
+        <Input
+          register={register}
+          type="email"
+          name="email"
+          error={errors.email}
+          handleFocus={handleFocus}
+        />
 
-          <label htmlFor="password">{t('signup.labels.password')}</label>
-          <Input
-            register={register}
-            type="password"
-            name="password"
-            error={errors.password}
-            handleFocus={handleFocus}
-            placeholder={t('signup.labels.passwordPlaceholder')}
-          />
+        <label htmlFor="password">{t('signup.labels.password')}</label>
+        <Input
+          register={register}
+          type="password"
+          name="password"
+          error={errors.password}
+          handleFocus={handleFocus}
+          placeholder={t('signup.labels.passwordPlaceholder')}
+        />
 
-          <label htmlFor="password">{t('signup.labels.passwordConfirmation')}</label>
-          <Input
-            register={register}
-            type="password"
-            name="passwordConfirmation"
-            error={errors.passwordConfirmation}
-            handleFocus={handleFocus}
-          />
+        <label htmlFor="password">{t('signup.labels.passwordConfirmation')}</label>
+        <Input
+          register={register}
+          type="password"
+          name="passwordConfirmation"
+          error={errors.passwordConfirmation}
+          handleFocus={handleFocus}
+        />
 
-          <label htmlFor="gender">{t('signup.labels.gender')}</label>
-          <Select
-            name="gender"
-            options={[...GENDER_OPTIONS]}
-            register={register}
-            placeholder={t('signup.labels.genderPlaceholder')}
-            error={errors.gender}
-            className="gender"
-          />
+        <label htmlFor="gender">{t('signup.labels.gender')}</label>
+        <Select
+          name="gender"
+          options={[...GENDER_OPTIONS]}
+          register={register}
+          placeholder={t('signup.labels.genderPlaceholder')}
+          error={errors.gender}
+          className="gender"
+        />
 
-          {error && error.data && (
-            <p className="error-message">{error.data.errors?.full_messages[0]}</p>
-          )}
+        {error && error.data && (
+          <p className="error-message">{error.data.errors?.full_messages[0]}</p>
+        )}
 
-          <div className="button-container">
-            <Button type="submit" disabled={isLoading}>
-              {t('signup.title')}
-            </Button>
-            <Link to={routesPaths.login} className="to-sign-in">
-              {t('signup.signIn')}
-            </Link>
-          </div>
-        </form>
-      </div>
-      <MobileSample />
+        <div className="button-container">
+          <Button type="submit" disabled={isLoading}>
+            {t('signup.title')}
+          </Button>
+          <Link to={routesPaths.login} className="to-sign-in">
+            {t('signup.signIn')}
+          </Link>
+        </div>
+      </form>
     </div>
   );
 };

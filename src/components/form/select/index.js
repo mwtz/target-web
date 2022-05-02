@@ -11,7 +11,7 @@ const Select = ({ register, options, name, error, placeholder, className = '', .
       </option>
       {options.map((value, i) => (
         <option key={i} value={value}>
-          {value}
+          {value.label ? value.label : value}
         </option>
       ))}
     </select>

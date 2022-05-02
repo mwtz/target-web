@@ -1,0 +1,76 @@
+@import 'styles/styles.scss';
+
+.target-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  min-width: rem(357px);
+  padding: rem(20px);
+  position: relative;
+
+  .targe-icon {
+    margin-top: rem(53px);
+  }
+  .title {
+    font-size: $font-size-2;
+    font-weight: 600;
+    letter-spacing: rem(1.65px);
+    margin-top: rem(16px);
+  }
+  .target-form {
+    display: flex;
+    justify-content: center;
+    margin-top: rem(26px);
+    text-transform: uppercase;
+    text-align: left;
+
+    Input {
+      background-color: transparent;
+      font-size: $font-size-1;
+      margin-bottom: rem(17px);
+    }
+
+    label {
+      font-size: $font-size-2;
+      font-weight: 600;
+      line-height: rem(13px);
+    }
+
+    .button-container {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      margin-top: rem(290px);
+    }
+
+    a {
+      color: $color-light-blue;
+      font-size: $font-size;
+      margin-top: rem(5px);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .error-message {
+      color: $color-red;
+      display: block;
+      font-size: $font-size-error;
+      margin-top: rem(5px);
+      text-transform: none;
+    }
+    .button {
+      font-weight: 600;
+      font-size: $font-size-2;
+      line-height: rem(12.89px);
+      text-transform: uppercase;
+      width: rem(120px);
+    }
+  }
+  .smiles {
+    margin-top: rem(25px);
+    width: rem(48px);
+  }
+}

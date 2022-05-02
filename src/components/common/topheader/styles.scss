@@ -1,0 +1,28 @@
+@import 'styles/styles.scss';
+
+.topheader {
+  align-items: center;
+  background-color: $color-light-blue;
+  color: $color-white;
+  display: flex;
+  font-weight: bold;
+  height: rem(60px);
+  left: 0;
+  line-height: rem(23.44px);
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  .text {
+    margin: auto;
+  }
+  .back-arrow {
+    height: rem(18.31px);
+    margin-left: rem(15px);
+    width: rem(14px);
+  }
+  .close {
+    margin-right: rem(15px);
+    width: rem(14px);
+  }
+}
