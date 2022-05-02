@@ -1,26 +1,40 @@
 import React, { useEffect, useRef } from 'react';
-import { MapContainer, Marker, TileLayer } from 'react-leaflet';
-import { Icon } from 'leaflet';
+import { MapContainer, Marker, TileLayer, useMapEvents } from 'react-leaflet';
+import { useHistory } from 'react-router';
 import 'leaflet/dist/leaflet.css';
 
 import useGeoLocation from 'hooks/useGeolocation';
-import locationIcon from 'assets/locationIcon.svg';
+import routesPaths from 'routes/routesPaths';
+import useTargets from 'hooks/useTargets';
+import { ICONS_MAP, userLocationIcon, emptyOvalIcon } from 'utils/topics';
 
 import './styles.scss';
-
-const userLocationIcon = new Icon({
-  iconUrl: locationIcon,
-  iconRetinaUrl: locationIcon,
-  popupAnchor: [-0, -0],
-  iconSize: [53, 69],
-});
 
 const center = [-38.0174106, -57.6705735];
 
 const MapView = () => {
+  const history = useHistory();
   const mapRef = useRef();
   const location = useGeoLocation();
   const { lat, lon } = location?.coordinates;
+  const { targets } = useTargets();
+
+  const getTopicIcon = topicId => {
+    return ICONS_MAP.get(topicId) || emptyOvalIcon;
+  };
+
+  const NewTargetClick = () => {
+    const map = useMapEvents({
+      click: e => {
+        const { lat, lng } = e.latlng;
+        history.push({
+          pathname: routesPaths.newtarget,
+          search: `?lat=${lat}&lng=${lng}`,
+        });
+      },
+    });
+    return null;
+  };
 
   useEffect(() => {
     if (location.loaded && !location.error) {
@@ -44,6 +58,13 @@ const MapView = () => {
         {location.loaded && !location.error && (
           <Marker position={[lat, lon]} icon={userLocationIcon}></Marker>
         )}
+
+        {targets.length &&
+          targets.map(({ lat, lng, radius, title, topic_id }, index) => (
+            <Marker key={index} position={[lat, lng]} icon={getTopicIcon(topic_id)}></Marker>
+          ))}
+
+        <NewTargetClick />
       </MapContainer>
     </>
   );

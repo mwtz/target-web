@@ -1,4 +1,6 @@
 import React from 'react';
+import { useHistory } from 'react-router';
+
 import useTranslation from 'hooks/useTranslation';
 import { useLogoutMutation } from 'services/auth/auth';
 import useAuth from 'hooks/useAuth';
@@ -9,16 +11,12 @@ import travel from 'assets/travel.svg';
 import music from 'assets/music.svg';
 
 import './styles.scss';
-import { useHistory } from 'react-router';
 
 const Profile = () => {
   const t = useTranslation();
   const [logout, { isLoading }] = useLogoutMutation();
 
-  const {
-    user: { avatar, username },
-  } = useAuth();
-
+  const { avatar, username } = useAuth();
   const history = useHistory();
   const handleLogout = () =>
     logout()
@@ -27,6 +25,7 @@ const Profile = () => {
         history.push('/');
       })
       .catch(err => console.log(err));
+
   return (
     <div className="profile-container">
       <h1 className="title">Target</h1>
