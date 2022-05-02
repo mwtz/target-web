@@ -62,7 +62,8 @@
     "errors": {
       "area": "Must provide a valid area",
       "topic": "Must provide a topic",
-      "title": "Must provide a title"
+      "title": "Must provide a title",
+      "limit": "You reached the allowed limit of targets"
     }
   }
 }

@@ -1,7 +1,7 @@
 import { Icon } from 'leaflet';
 
 import food from 'assets/food.svg';
-import footballMap from 'assets/footballmap.svg';
+import footballMap from 'assets/footballMap.svg';
 import musicMap from 'assets/musicMap.svg';
 import series from 'assets/series.svg';
 import dating from 'assets/dating.svg';
@@ -82,8 +82,8 @@ export const politicsIcon = new Icon({
 });
 
 export const ICONS_MAP = new Map();
-ICONS_MAP.set(11, emptyOval);
-ICONS_MAP.set(12, emptyOval);
+ICONS_MAP.set(11, emptyOvalIcon);
+ICONS_MAP.set(12, emptyOvalIcon);
 ICONS_MAP.set(2, footballIcon);
 ICONS_MAP.set(13, politicsIcon);
 ICONS_MAP.set(14, artIcon);
