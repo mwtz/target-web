@@ -1,7 +1,11 @@
 import { Icon } from 'leaflet';
 
 import food from 'assets/food.svg';
+<<<<<<< HEAD
 import footballMap from 'assets/footballMap.svg';
+=======
+import footballMap from 'assets/footballmap.svg';
+>>>>>>> 461a06338533076b6047f93d2f44beeae4a50704
 import musicMap from 'assets/musicMap.svg';
 import series from 'assets/series.svg';
 import dating from 'assets/dating.svg';
