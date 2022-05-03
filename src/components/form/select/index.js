@@ -10,7 +10,7 @@ const Select = ({ register, options, name, error, placeholder, className = '', .
         {placeholder}
       </option>
       {options.map((value, i) => (
-        <option key={i} value={value}>
+        <option key={i} value={JSON.stringify(value)}>
           {value.label ? value.label : value}
         </option>
       ))}

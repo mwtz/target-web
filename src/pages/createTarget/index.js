@@ -1,26 +1,42 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useHistory, useLocation } from 'react-router';
 
+import { useCreateTargetMutation } from 'services/target/target';
+import routesPaths from 'routes/routesPaths';
+import useTopics from 'hooks/useTopics';
 import useTranslation from 'hooks/useTranslation';
 import TopHeader from 'components/common/topheader';
 import Input from 'components/form/Input';
 import Button from 'components/common/Button';
 import Select from 'components/form/select';
-import { TARGET_TOPICS } from 'constants/constants';
 import newTarget from 'assets/newTarget.svg';
 import smiles from 'assets/smilies.svg';
 
 import './styles.scss';
-import useTopics from 'hooks/useTopics';
-const CreateTarget = () => {
-  const t = useTranslation();
 
+const CreateTarget = () => {
+  const [lat, setLat] = useState('0');
+  const [lng, setLng] = useState('0');
+
+  const t = useTranslation();
   const { topics } = useTopics();
+  const location = useLocation();
+  const { push } = useHistory();
+  const [createTarget, { isSuccess }] = useCreateTargetMutation();
+
+  useEffect(() => {
+    let params = new URLSearchParams(location.search);
+    let lat = params.get('lat');
+    let lng = params.get('lng');
+    setLat(lat);
+    setLng(lng);
+  }, [location]);
 
   const schema = z.object({
-    area: z.string().nonempty({ message: t('newTarget.errors.area') }),
+    radius: z.string().nonempty({ message: t('newTarget.errors.area') }),
     title: z.string().nonempty({ message: t('newTarget.errors.title') }),
     topic: z.string().nonempty({ message: t('newTarget.errors.topic') }),
   });
@@ -32,8 +48,23 @@ const CreateTarget = () => {
   } = useForm({ resolver: zodResolver(schema) });
 
   const onSubmit = data => {
-    console.log(data);
+    const { title, radius, topic } = data;
+    const { id: topic_id } = JSON.parse(topic);
+    createTarget({
+      title,
+      radius,
+      lat,
+      lng,
+      topic_id,
+    });
   };
+
+  useEffect(() => {
+    if (isSuccess) {
+      push(routesPaths.profile);
+    }
+  }, [isSuccess, push]);
+
   return (
     <div className="target-container">
       <TopHeader>{t('newTarget.header')}</TopHeader>
@@ -41,13 +72,13 @@ const CreateTarget = () => {
       <div className="title">{t('newTarget.title')}</div>
       <div className="target-form">
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
-          <label htmlFor="area">{t('newTarget.labels.areaLabel')}</label>
+          <label htmlFor="radius">{t('newTarget.labels.areaLabel')}</label>
           <Input
             className="input"
             register={register}
             type="number"
-            name="area"
-            error={errors.area}
+            name="radius"
+            error={errors.radius}
           />
           <label htmlFor="title">{t('newTarget.labels.targetTitle')}</label>
           <Input
@@ -55,7 +86,7 @@ const CreateTarget = () => {
             register={register}
             type="string"
             name="title"
-            error={errors.area}
+            error={errors.title}
           />
           <label htmlFor="topic">{t('newTarget.labels.topic')}</label>
           <Select
@@ -66,11 +97,6 @@ const CreateTarget = () => {
             error={errors.topic}
             className="topic"
           />
-
-          {/* {error && error.data && (
-            <p className="error-message">{error.data.errors?.full_messages[0]}</p>
-          )} */}
-
           <div className="button-container">
             <Button type="submit">{t('newTarget.save')}</Button>
           </div>
