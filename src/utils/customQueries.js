@@ -28,8 +28,9 @@ export const baseQueryWithReauth = async (args, api, extraOptions) => {
       uid: headers.get(UID),
       client: headers.get(CLIENT),
     };
-
-    result.data.info = session;
+    if (result.data) {
+      result.data.info = session;
+    }
   }
 
   return result;

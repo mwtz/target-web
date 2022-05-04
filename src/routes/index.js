@@ -4,6 +4,7 @@ import Signup from 'pages/Signup';
 import Login from 'pages/Login';
 import Profile from 'pages/Profile';
 import CreateTarget from 'pages/createTarget';
+import EditTarget from 'pages/editTarget';
 
 const routes = [
   {
@@ -27,6 +28,10 @@ const routes = [
   {
     path: routesPaths.newtarget,
     component: <CreateTarget />,
+  },
+  {
+    path: routesPaths.editTarget,
+    component: <EditTarget />,
   },
 ];
 

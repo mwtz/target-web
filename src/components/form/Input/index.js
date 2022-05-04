@@ -3,15 +3,34 @@ import cn from 'classnames';
 
 import './styles.scss';
 
-const Input = ({ register, type = 'text', name, error, handleFocus, placeholder = '' }) => (
+const Input = ({
+  register,
+  type = 'text',
+  name,
+  error,
+  handleFocus,
+  placeholder = '',
+  defaultValue = null,
+}) => (
   <div className="d-flex flex-column text-center Input">
-    <input
-      className={cn({ error })}
-      type={type}
-      {...register(name)}
-      onFocus={handleFocus}
-      placeholder={placeholder}
-    />
+    {defaultValue ? (
+      <input
+        className={cn({ error })}
+        type={type}
+        {...register(name)}
+        onFocus={handleFocus}
+        placeholder={placeholder}
+        value={defaultValue}
+      />
+    ) : (
+      <input
+        className={cn({ error })}
+        type={type}
+        {...register(name)}
+        onFocus={handleFocus}
+        placeholder={placeholder}
+      />
+    )}
     <small className="error-message">{error?.message}</small>
   </div>
 );
