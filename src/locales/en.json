@@ -78,11 +78,13 @@
       "area": "Must provide a valid area",
       "topic": "Must provide a topic",
       "title": "Must provide a title",
-      "somethinghappen":"something happen"
+      "warning":"You are about to delete your target"
     },
     "button": {
       "save": "SAVE",
-      "delete": "DELETE"
+      "delete": "DELETE",
+      "confirm": "CONFIRM",
+      "cancel": "CANCEL"
     }
   }
 }

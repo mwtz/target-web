@@ -20,7 +20,7 @@ import './styles.scss';
 
 const EditTarget = () => {
   const [currentTarget, setCurrentTarget] = useState(null);
-
+  const [confirmDelete, setConfirmDelete] = useState(false);
   const t = useTranslation();
   const { topics } = useTopics();
   const { targets } = useTargets();
@@ -52,6 +52,13 @@ const EditTarget = () => {
     register,
     formState: { errors },
   } = useForm({ resolver: zodResolver(schema) });
+
+  const checkDelete = () => {
+    setConfirmDelete(true);
+  };
+  const cancelDelete = () => {
+    setConfirmDelete(false);
+  };
 
   const handleDeleteTarget = () => {
     deleteTarget(currentTarget.id)
@@ -97,8 +104,24 @@ const EditTarget = () => {
               className="topic"
               active={currentTarget.topic_id}
             />
+
             <div className="button-container">
-              <Button handleClick={handleDeleteTarget}>{t('editTarget.button.delete')}</Button>
+              {!confirmDelete && (
+                <Button handleClick={checkDelete}>{t('editTarget.button.delete')}</Button>
+              )}
+              {confirmDelete && (
+                <div className="confirm-delete">
+                  {confirmDelete && (
+                    <p className="error-message-limit">{t('editTarget.errors.warning')}</p>
+                  )}
+                  <div className="confirm-btn">
+                    <Button handleClick={handleDeleteTarget} className="warning">
+                      {t('editTarget.button.confirm')}
+                    </Button>
+                    <Button handleClick={cancelDelete}>{t('editTarget.button.cancel')}</Button>
+                  </div>
+                </div>
+              )}
             </div>
           </form>
         </div>
