@@ -20,7 +20,6 @@ const targetApi = api.injectEndpoints({
       query: id => ({
         url: `${endpoints.TARGETS}/${id}`,
         method: 'DELETE',
-        id,
       }),
     }),
   }),

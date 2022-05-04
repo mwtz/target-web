@@ -81,14 +81,15 @@ export const politicsIcon = new Icon({
   iconSize: [53, 69],
 });
 
-export const ICONS_MAP = new Map();
-ICONS_MAP.set(11, emptyOvalIcon);
-ICONS_MAP.set(12, emptyOvalIcon);
-ICONS_MAP.set(2, footballIcon);
-ICONS_MAP.set(13, politicsIcon);
-ICONS_MAP.set(14, artIcon);
-ICONS_MAP.set(15, datingIcon);
-ICONS_MAP.set(16, musicIcon);
-ICONS_MAP.set(17, moviesIcon);
-ICONS_MAP.set(19, foodIcon);
-ICONS_MAP.set(18, seriesIcon);
+export const ICONS_MAP = new Map([
+  [11, emptyOvalIcon],
+  [12, emptyOvalIcon],
+  [2, footballIcon],
+  [13, politicsIcon],
+  [14, artIcon],
+  [15, datingIcon],
+  [16, musicIcon],
+  [17, moviesIcon],
+  [19, foodIcon],
+  [18, seriesIcon],
+]);
