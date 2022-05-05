@@ -12,7 +12,14 @@ const targetSlice = createSlice({
   name: 'target',
   initialState,
   extraReducers: builder => {
-    builder.addMatcher(isAnyOf(createTargetFulfilled), (_state, { payload: { target } }) => {
+    // builder.addMatcher(isAnyOf(createTargetFulfilled), (_state, { payload }) => {
+    //   const { target, match_conversation, matched_user } = payload;
+    //   return {
+    //     targets: [..._state.targets, { target, match_conversation, matched_user }],
+    //   };
+    // });
+    builder.addMatcher(isAnyOf(createTargetFulfilled), (_state, { payload }) => {
+      const { target } = payload;
       return {
         targets: [..._state.targets, target],
       };

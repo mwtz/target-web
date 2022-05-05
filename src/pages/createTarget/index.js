@@ -3,6 +3,7 @@ import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useHistory, useLocation } from 'react-router';
+import { NotificationContainer, NotificationManager } from 'react-notifications';
 
 import { useCreateTargetMutation } from 'services/target/target';
 import routesPaths from 'routes/routesPaths';
@@ -65,7 +66,7 @@ const CreateTarget = () => {
       lat,
       lng,
       topic_id,
-    });
+    }).then(data => console.log(data));
   };
 
   useEffect(() => {
@@ -74,6 +75,11 @@ const CreateTarget = () => {
     }
   }, [isSuccess, push]);
 
+  const notification = () => {
+    NotificationManager.success('Success message', 'Title here', 5000, () => {
+      push(routesPaths.profile);
+    });
+  };
   return (
     <div className="target-container">
       <TopHeader>{t('newTarget.header')}</TopHeader>
@@ -111,9 +117,11 @@ const CreateTarget = () => {
           <div className="button-container">
             <Button type="submit">{t('newTarget.save')}</Button>
           </div>
+          <Button handleClick={notification}>Try</Button>
         </form>
       </div>
       <img src={smiles} alt="smiles" className="smiles" />
+      <NotificationContainer />
     </div>
   );
 };
