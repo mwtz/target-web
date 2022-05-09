@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
-import { selectTarget } from 'services/target/target';
+import { selectTarget, useGetTargetsQuery } from 'services/target/target';
 
 const useTargets = () => {
+  useGetTargetsQuery();
   const { targets } = useSelector(selectTarget);
-
   return {
     targets,
   };

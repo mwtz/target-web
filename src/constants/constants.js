@@ -13,9 +13,12 @@ export const AUTH_USER_KEY = 'user';
 // GENDER OPTIONS
 export const GENDER_OPTIONS = ['female', 'male', 'other'];
 
-//
+// TARGET TOPICS
 export const TARGET_TOPICS = [
   { icon: football, label: 'Football' },
   { icon: travel, label: 'Travel' },
   { icon: music, label: 'Music' },
 ];
+
+// TARGET LIMIT
+export const TARGETS_LIMIT = 10;

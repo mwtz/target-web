@@ -5,9 +5,15 @@ const targetApi = api.injectEndpoints({
   endpoints: builder => ({
     createTarget: builder.mutation({
       query: target => ({
-        url: endpoints.CREATE_TARGET,
+        url: endpoints.TARGETS,
         method: 'POST',
         body: { target },
+      }),
+    }),
+    getTargets: builder.query({
+      query: () => ({
+        url: endpoints.TARGETS,
+        method: 'GET',
       }),
     }),
   }),
@@ -16,8 +22,10 @@ const targetApi = api.injectEndpoints({
 
 export const {
   useCreateTargetMutation,
+  useGetTargetsQuery,
   endpoints: {
     createTarget: { matchFulfilled: createTargetFulfilled },
+    getTargets: { matchFulfilled: getTargetsFulfilled },
   },
 } = targetApi;
 

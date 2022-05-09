@@ -61,6 +61,13 @@
       margin-top: rem(5px);
       text-transform: none;
     }
+    .error-message-limit {
+      color: $color-red;
+      font-size: $font-size-error;
+      margin-top: rem(25px);
+      text-align: center;
+      text-transform: none;
+    }
     .button {
       font-weight: 600;
       font-size: $font-size-2;

@@ -12,6 +12,8 @@ import TopHeader from 'components/common/topheader';
 import Input from 'components/form/Input';
 import Button from 'components/common/Button';
 import Select from 'components/form/select';
+import useTargets from 'hooks/useTargets';
+import { TARGETS_LIMIT } from 'constants/constants';
 import newTarget from 'assets/newTarget.svg';
 import smiles from 'assets/smilies.svg';
 
@@ -20,9 +22,11 @@ import './styles.scss';
 const CreateTarget = () => {
   const [lat, setLat] = useState('0');
   const [lng, setLng] = useState('0');
+  const [error, setError] = useState(false);
 
   const t = useTranslation();
   const { topics } = useTopics();
+  const { targets } = useTargets();
   const location = useLocation();
   const { push } = useHistory();
   const [createTarget, { isSuccess }] = useCreateTargetMutation();
@@ -48,6 +52,11 @@ const CreateTarget = () => {
   } = useForm({ resolver: zodResolver(schema) });
 
   const onSubmit = data => {
+    if (targets.length === TARGETS_LIMIT) {
+      setError(true);
+      return;
+    }
+    setError(false);
     const { title, radius, topic } = data;
     const { id: topic_id } = JSON.parse(topic);
     createTarget({
@@ -97,6 +106,8 @@ const CreateTarget = () => {
             error={errors.topic}
             className="topic"
           />
+          {error && <p className="error-message-limit">{t('newTarget.errors.limit')}</p>}
+
           <div className="button-container">
             <Button type="submit">{t('newTarget.save')}</Button>
           </div>
