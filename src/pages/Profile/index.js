@@ -3,16 +3,20 @@ import { useHistory } from 'react-router';
 import useTranslation from 'hooks/useTranslation';
 import { useLogoutMutation } from 'services/auth/auth';
 import useAuth from 'hooks/useAuth';
+import useConversations from 'hooks/useConversations';
+import useTargets from 'hooks/useTargets';
 import profile from 'assets/profile.svg';
 import NoTarget from 'components/noTarget/NoTarget';
 import NoMatch from 'components/noMatch/NoMatch';
-import ChatMatch from 'components/chatMatch/ChatMatch';
+import ChatMatch from 'components/chatMatch';
 
 import './styles.scss';
 
 const Profile = () => {
   const t = useTranslation();
   const [logout, { isLoading }] = useLogoutMutation();
+  const { conversations } = useConversations();
+  const { targets } = useTargets();
 
   const { avatar, username } = useAuth();
   const history = useHistory();
@@ -40,9 +44,9 @@ const Profile = () => {
         </button>
       </div>
       <span className="separator" />
-      {false && <NoTarget />}
-      {false && <NoMatch />}
-      {true && <ChatMatch />}
+      {!targets.length && <NoTarget />}
+      {!conversations.length && targets.length && <NoMatch />}
+      {conversations.length && <ChatMatch matchs={conversations} />}
     </div>
   );
 };

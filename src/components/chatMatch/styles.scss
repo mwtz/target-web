@@ -5,8 +5,8 @@
   display: flex;
   flex-direction: column;
   .separator {
-    width: rem(339px);
     margin-bottom: rem(2px);
+    width: rem(339px);
   }
   .chat-title {
     font-weight: 600;
@@ -38,23 +38,16 @@
         padding: rem(8px);
         width: rem(339px);
         .chat-avatar {
-          display: flex;
-          width: rem(30px);
-          height: rem(30px);
           border-radius: 50%;
+          display: flex;
+          height: rem(30px);
           margin-left: rem(20px);
-        }
-        .chat-topic {
-          background-color: aqua;
-          display: flex;
           width: rem(30px);
-          height: rem(30px);
-          border-radius: 50%;
-          margin-right: rem(20px);
         }
         .chat {
           margin-left: rem(13px);
           text-align: justify;
+          width: rem(203px);
           .user-name {
             font-size: $font-size-3;
             font-weight: 600;
@@ -64,6 +57,29 @@
           .chat-text {
             font-size: $font-size-2;
             margin: 0;
+          }
+        }
+        .topic-notification{
+          position: relative;
+          .notification{
+            background-color: $color-orange;
+            border-radius: 50%;
+            display: none;
+            height: rem(14px);
+            font-size: $font-size-1;
+            position: absolute;
+            width: rem(14px);
+          }
+          .active{
+            display: inline;            
+          }
+          .chat-topic {
+            background-color: aqua;
+            border-radius: 50%;
+            display: flex;
+            height: rem(30px);
+            margin-right: rem(20px);
+            width: rem(30px);
           }
         }
       }
