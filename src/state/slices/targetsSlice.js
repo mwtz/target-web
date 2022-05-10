@@ -1,10 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { createTargetFulfilled, getTargetsFulfilled } from 'services/target/target';
+import {
+  createTargetFulfilled,
+  deleteTargetFulfilled,
+  getTargetsFulfilled,
+} from 'services/target/target';
 
 const initialState = {
   targets: [],
 };
-
 const targetSlice = createSlice({
   name: 'target',
   initialState,
@@ -17,6 +20,12 @@ const targetSlice = createSlice({
     builder.addMatcher(getTargetsFulfilled, (_state, { payload: { targets } }) => {
       return {
         targets: targets.map(({ target }) => target),
+      };
+    });
+    builder.addMatcher(deleteTargetFulfilled, ({ targets }, action) => {
+      const { originalArgs: targetId = '' } = action.meta?.arg;
+      return {
+        targets: targets.filter(({ id }) => id !== targetId),
       };
     });
   },

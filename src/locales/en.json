@@ -65,5 +65,26 @@
       "title": "Must provide a title",
       "limit": "You reached the allowed limit of targets"
     }
+  },
+  "editTarget": {
+    "header":"EDIT TARGET ",
+    "title": "YOUR TARGET",
+    "labels": {
+      "areaLabel":"SPECIFY AREA LENGHT",
+      "targetTitle":"TARGET TITLE",
+      "topic":"SELECT A TOPIC"
+    },
+    "errors": {
+      "area": "Must provide a valid area",
+      "topic": "Must provide a topic",
+      "title": "Must provide a title",
+      "warning":"You are about to delete your target"
+    },
+    "button": {
+      "save": "SAVE",
+      "delete": "DELETE",
+      "confirm": "CONFIRM",
+      "cancel": "CANCEL"
+    }
   }
 }

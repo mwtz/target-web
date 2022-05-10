@@ -1,0 +1,97 @@
+@import 'styles/styles.scss';
+
+.edit-target-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  min-width: rem(357px);
+  padding: rem(20px);
+  position: relative;
+
+  .targe-icon {
+    margin-top: rem(53px);
+  }
+  .title {
+    font-size: $font-size-2;
+    font-weight: 600;
+    letter-spacing: rem(1.65px);
+    margin-top: rem(16px);
+  }
+  .target-form {
+    display: flex;
+    justify-content: center;
+    margin-top: rem(26px);
+    text-transform: uppercase;
+    text-align: left;
+    form {
+      width: rem(257);
+    }
+    Input {
+      background-color: transparent;
+      font-size: $font-size-1;
+      margin-bottom: rem(17px);
+    }
+
+    label {
+      font-size: $font-size-2;
+      font-weight: 600;
+      line-height: rem(13px);
+    }
+
+    .button-container {
+      justify-content: center;
+      display: flex;
+      margin-top: rem(290px);
+      .confirm-delete {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .confirm-btn {
+          justify-content: space-around;
+          .warning {
+            margin-right: rem(15px);
+            color: $color-white;
+            background-color: $color-red;
+          }
+        }
+      }
+    }
+
+    a {
+      color: $color-light-blue;
+      font-size: $font-size;
+      margin-top: rem(5px);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .error-message {
+      color: $color-red;
+      display: block;
+      font-size: $font-size-error;
+      margin-top: rem(5px);
+      text-transform: none;
+    }
+    .error-message-limit {
+      color: $color-red;
+      font-size: $font-size-error;
+      margin-top: rem(25px);
+      text-align: center;
+      text-transform: none;
+    }
+    .button {
+      font-weight: 600;
+      font-size: $font-size-2;
+      line-height: rem(12.89px);
+      text-transform: uppercase;
+      width: rem(80px);
+    }
+  }
+  .smiles {
+    margin-top: rem(25px);
+    width: rem(48px);
+  }
+}

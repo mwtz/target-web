@@ -16,6 +16,12 @@ const targetApi = api.injectEndpoints({
         method: 'GET',
       }),
     }),
+    deleteTarget: builder.mutation({
+      query: id => ({
+        url: `${endpoints.TARGETS}/${id}`,
+        method: 'DELETE',
+      }),
+    }),
   }),
   overrideExisting: true,
 });
@@ -23,9 +29,11 @@ const targetApi = api.injectEndpoints({
 export const {
   useCreateTargetMutation,
   useGetTargetsQuery,
+  useDeleteTargetMutation,
   endpoints: {
     createTarget: { matchFulfilled: createTargetFulfilled },
     getTargets: { matchFulfilled: getTargetsFulfilled },
+    deleteTarget: { matchFulfilled: deleteTargetFulfilled },
   },
 } = targetApi;
 

@@ -42,6 +42,13 @@ const MapView = () => {
     }
   }, [location, lat, lon]);
 
+  const handleMarkerClick = targetId => {
+    history.push({
+      pathname: routesPaths.editTarget,
+      search: `?targeId=${targetId}`,
+    });
+  };
+
   return (
     <>
       <MapContainer
@@ -60,9 +67,21 @@ const MapView = () => {
         )}
 
         {targets.length &&
-          targets.map(({ lat, lng, radius, title, topic_id }, index) => (
-            <Marker key={index} position={[lat, lng]} icon={getTopicIcon(topic_id)}></Marker>
-          ))}
+          targets.map((target, index) => {
+            const { id, lat, lng, topic_id } = target;
+            return (
+              <Marker
+                key={index}
+                position={[lat, lng]}
+                icon={getTopicIcon(topic_id)}
+                eventHandlers={{
+                  click: () => {
+                    handleMarkerClick(id);
+                  },
+                }}
+              ></Marker>
+            );
+          })}
 
         <NewTargetClick />
       </MapContainer>
