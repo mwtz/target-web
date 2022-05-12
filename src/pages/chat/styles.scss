@@ -4,15 +4,15 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  min-width: rem(357px);
   position: relative;
+  min-width: rem(357px);
   .chat-header {
-    margin-top: rem(61px);
     align-items: center;
     border-bottom: rem(2px) solid $color-light-grey;
     display: flex;
-    height: rem(60.5px);
     justify-content: space-between;
+    height: rem(60.5px);
+    margin-top: rem(61px);
     padding: rem(8px);
     width: rem(339px);
     .chat-avatar {
@@ -35,6 +35,50 @@
       .topic-title {
         font-size: $font-size-2;
         margin: 0;
+      }
+    }
+  }
+  .chat-box {
+    display: flex;
+    flex-direction: column;
+    margin-top: rem(20px);
+    width: 100%;
+    .external-user,
+    .logged-user {
+      p {
+        border-radius: 8px;
+        font-size: $font-size-2;
+        max-width: 155px;
+        padding: rem(8px);
+      }
+    }
+    .logged-user {
+      align-self: flex-end;
+      display: flex;
+      flex-direction: row-reverse;
+      margin-right: rem(20px);
+      p {
+        background-color: $color-orange;
+        margin-left: rem(10px);
+        text-align: right;
+      }
+      .time {
+        align-self: self-end;
+        font-size: rem(9px);
+        margin-bottom: rem(20px);
+      }
+    }
+    .external-user {
+      align-self: flex-start;
+      display: flex;
+      margin-left: rem(20px);
+      p {
+        background-color: $color-light-grey;
+        margin-right: rem(10px);
+        text-align: left;
+      }
+      span {
+        font-size: rem(9px);
       }
     }
   }
