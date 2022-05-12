@@ -4,20 +4,21 @@ import TopHeader from 'components/common/topheader';
 import useTranslation from 'hooks/useTranslation';
 import travel from 'assets/travel2.svg';
 import './styles.scss';
-import { useChatQuery } from 'services/conversations/conversations';
+import { useGetChatMutation } from 'services/conversations/conversations';
 
 const Chat = () => {
   const t = useTranslation();
   const location = useLocation();
-  // const { chat } = useChatQuery();
+  const [getChat] = useGetChatMutation();
 
-  // useEffect(() => {
-  //   let params = new URLSearchParams(location.search);
-  //   let matchId = params.get('id');
-  //   chat(matchId)
-  //     .unwrap()
-  //     .catch(err => console.log(err));
-  // }, [location, chat]);
+  useEffect(() => {
+    let params = new URLSearchParams(location.search);
+    let matchId = params.get('id');
+    console.log(matchId);
+    getChat(matchId)
+      .unwrap()
+      .catch(err => console.log(err));
+  }, [location, getChat]);
 
   return (
     <div className="conversation-container">

@@ -9,7 +9,7 @@ const conversationsApi = api.injectEndpoints({
         method: 'GET',
       }),
     }),
-    chat: builder.query({
+    getChat: builder.mutation({
       query: id => ({
         url: `${endpoints.MATCH_CONVERSATIONS}/${id}/messages?page=1`,
         method: 'GET',
@@ -21,10 +21,10 @@ const conversationsApi = api.injectEndpoints({
 
 export const {
   useConversationsQuery,
-  useChatQuery,
+  useGetChatMutation,
   endpoints: {
     conversations: { matchFulfilled: conversationsFulfilled },
-    chat: { matchFulfilled: chatFulfilled },
+    getChat: { matchFulfilled: getChatFulfilled },
   },
 } = conversationsApi;
 
