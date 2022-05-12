@@ -5,6 +5,7 @@ const routesPaths = {
   signup: '/sign-up',
   newtarget: '/new-target',
   editTarget: '/edit-target',
+  about: '/about',
 };
 
 export default routesPaths;

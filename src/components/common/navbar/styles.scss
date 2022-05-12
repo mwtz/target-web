@@ -1,0 +1,27 @@
+@import 'styles/styles.scss';
+
+.navbar-container {
+  display: flex;
+  cursor: pointer;
+  margin-left: rem(20px);
+  margin-top: rem(20px);
+  position: absolute;
+  top:20;
+  left:0;
+  width: rem(40px);
+  .links{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: rem(20px);
+    .about{
+      text-decoration: none;
+      color: $color-black;
+      font-weight: 600;
+    }
+    .contact{
+      border: none;
+      padding: 0;
+    }
+  }
+}
