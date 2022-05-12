@@ -1,20 +1,22 @@
 import React from 'react';
 import { useHistory } from 'react-router';
-
 import useTranslation from 'hooks/useTranslation';
 import { useLogoutMutation } from 'services/auth/auth';
 import useAuth from 'hooks/useAuth';
+import useConversations from 'hooks/useConversations';
+import useTargets from 'hooks/useTargets';
 import profile from 'assets/profile.svg';
-import smiles from 'assets/smilies.svg';
-import football from 'assets/football.svg';
-import travel from 'assets/travel.svg';
-import music from 'assets/music.svg';
+import NoTarget from 'components/noTarget/NoTarget';
+import NoMatch from 'components/noMatch/NoMatch';
+import ChatMatch from 'components/chatMatch';
 
 import './styles.scss';
 
 const Profile = () => {
   const t = useTranslation();
   const [logout, { isLoading }] = useLogoutMutation();
+  const { conversations } = useConversations();
+  const { targets } = useTargets();
 
   const { avatar, username } = useAuth();
   const history = useHistory();
@@ -42,23 +44,11 @@ const Profile = () => {
         </button>
       </div>
       <span className="separator" />
-      <h2 className="subtitle">Create your first target by clicking wherever on the map.</h2>
-      <p className="suggestion">Psss!, these are the most popular targets:</p>
-      <div className="list">
-        <div className="list-item">
-          <img src={football} alt="football bullet" className="list-bullet" />
-          <p className="list-text">Football</p>
-        </div>
-        <div className="list-item">
-          <img src={travel} alt="travel bullet" className="list-bullet" />
-          <p className="list-text">Travel</p>
-        </div>
-        <div className="list-item">
-          <img src={music} alt="music bullet" className="list-bullet" />
-          <p className="list-text">Music</p>
-        </div>
-      </div>
-      <img src={smiles} alt="smiles" className="smiles" />
+      {targets.length ? (
+        <>{conversations.length ? <ChatMatch matchs={conversations} /> : <NoMatch />}</>
+      ) : (
+        <NoTarget />
+      )}
     </div>
   );
 };
