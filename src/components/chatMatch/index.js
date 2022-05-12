@@ -10,13 +10,13 @@ const ChatMatch = ({ matchs = [] }) => {
     <div className="chat-container">
       <h3 className="chat-title"> Chats </h3>
       <div className="chat-list">
-        {matchs.map(({ last_message, match_id, topic_icon, unread_messages, user }, index) => {
+        {matchs.map(({ last_message, match_id, topic_icon, unread_messages, user }) => {
           const {
             avatar: { small_thumb_url: small },
             full_name,
           } = user;
           return (
-            <Link to={'/chat'} key={index}>
+            <Link to={'/chat'} key={match_id}>
               <div className="chat-box">
                 <img src={small} alt="" className="chat-avatar" />
                 <div className="chat">
