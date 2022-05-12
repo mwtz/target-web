@@ -87,5 +87,6 @@
       "cancel": "CANCEL"
     }
   },
-  "noMatch": {"message": "There not matches for your targets yet."}
+  "noMatch": {"message": "There not matches for your targets yet."},
+  "chatConversation": {"header": "CHAT"}
 }
