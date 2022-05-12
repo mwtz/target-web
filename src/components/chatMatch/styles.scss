@@ -4,15 +4,15 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  .separator {
-    margin-bottom: rem(2px);
-    width: rem(339px);
-  }
+
   .chat-title {
+    border-bottom: rem(2px) solid $color-light-grey;
     font-weight: 600;
     font-size: $font-size;
     line-height: rem(32px);
     margin-top: rem(55px);
+    margin-bottom: rem(2px);
+    width: rem(339px);
   }
   .chat-list {
     align-items: flex-start;
@@ -31,7 +31,7 @@
       text-decoration: none;
       .chat-box {
         align-items: center;
-        border-bottom: rem(2px) solid $color-light-grey;
+        border-bottom: rem(1px) solid $color-light-grey;
         display: flex;
         height: rem(60.5px);
         justify-content: space-between;
@@ -59,9 +59,9 @@
             margin: 0;
           }
         }
-        .topic-notification{
+        .topic-notification {
           position: relative;
-          .notification{
+          .notification {
             background-color: $color-orange;
             border-radius: 50%;
             display: none;
@@ -70,8 +70,8 @@
             position: absolute;
             width: rem(14px);
           }
-          .active{
-            display: inline;            
+          .active {
+            display: inline;
           }
           .chat-topic {
             background-color: aqua;

@@ -2,6 +2,13 @@
   "global": {
     "pageTitle": "RS React Redux Base"
   },
+  "noTarget": {
+    "title": "Create your first target by clicking wherever on the map.",
+    "subtitle": "Psss!, these are the most popular targets:",
+    "football": "Football",
+    "travel": "Travel",
+    "music": "Music"  
+  },
   "home": {
     "welcomeMsg": "Welcome to TARGET",
     "title": "Find people near you & Connect",
@@ -87,5 +94,5 @@
       "cancel": "CANCEL"
     }
   },
-  "noMatch": {"message": "There not matches for your targets yet."}
+  "noMatch": {"message": "There are not matches for your targets yet."}
 }
