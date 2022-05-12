@@ -21,7 +21,7 @@ const ChatMatch = ({ matchs = [] }) => {
             id,
           } = user;
           return (
-            <Link to={'/chat'} key={index}>
+            <Link to={`/chat?id=${match_id}`} key={index}>
               <div className="chat-box">
                 <img src={small} alt="" className="chat-avatar" />
                 <div className="chat">

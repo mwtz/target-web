@@ -5,9 +5,10 @@ import { selectConversation, useConversationsQuery } from 'services/conversation
 const useConversations = () => {
   useConversationsQuery();
 
-  const { conversations } = useSelector(selectConversation);
+  const { conversations, currentChat } = useSelector(selectConversation);
   return {
     conversations,
+    currentChat,
   };
 };
 

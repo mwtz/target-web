@@ -9,14 +9,22 @@ const conversationsApi = api.injectEndpoints({
         method: 'GET',
       }),
     }),
+    chat: builder.query({
+      query: id => ({
+        url: `${endpoints.MATCH_CONVERSATIONS}/${id}/messages?page=1`,
+        method: 'GET',
+      }),
+    }),
   }),
   overrideExisting: true,
 });
 
 export const {
   useConversationsQuery,
+  useChatQuery,
   endpoints: {
     conversations: { matchFulfilled: conversationsFulfilled },
+    chat: { matchFulfilled: chatFulfilled },
   },
 } = conversationsApi;
 

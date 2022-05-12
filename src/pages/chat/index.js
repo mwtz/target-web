@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import TopHeader from 'components/common/topheader';
 import useTranslation from 'hooks/useTranslation';
 import travel from 'assets/travel2.svg';
 import './styles.scss';
+import { useChatQuery } from 'services/conversations/conversations';
 
 const Chat = () => {
   const t = useTranslation();
+  const location = useLocation();
+  // const { chat } = useChatQuery();
+
+  // useEffect(() => {
+  //   let params = new URLSearchParams(location.search);
+  //   let matchId = params.get('id');
+  //   chat(matchId)
+  //     .unwrap()
+  //     .catch(err => console.log(err));
+  // }, [location, chat]);
 
   return (
     <div className="conversation-container">
