@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import useTranslation from 'hooks/useTranslation';
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
@@ -8,18 +8,15 @@ import Button from 'components/common/Button';
 import smileIcon from 'assets/smilies.svg';
 import Input from 'components/form/Input';
 import TextArea from 'components/form/textarea';
-import { useQuestionMutation } from 'services/questions/questions';
+import { useSendQuestionMutation } from 'services/questions/questions';
 import close from 'assets/close.svg';
 
 import './styles.scss';
 
-const Modal = ({ handleCloseModal = null }) => {
-  const [showForm, setShowForm] = useState(true);
-  const [sendError, setSendError] = useState(false);
-  const [sendSuccess, setSendSuccess] = useState(false);
-
+const ContactFormModal = ({ handleCloseModal = null }) => {
   const t = useTranslation();
-  const [question, { isSuccess, isError }] = useQuestionMutation();
+  const [sendQuestion, { isSuccess, isError }] = useSendQuestionMutation();
+  const showForm = !isSuccess && !isError;
 
   const schema = z.object({
     email: z.string().email({ message: t('contact.errors.email') }),
@@ -33,19 +30,8 @@ const Modal = ({ handleCloseModal = null }) => {
   } = useForm({ resolver: zodResolver(schema) });
 
   const onSubmit = ({ email, message: body }) => {
-    question({ email, body });
+    sendQuestion({ email, body });
   };
-
-  useEffect(() => {
-    if (isSuccess) {
-      setSendSuccess(true);
-      setShowForm(false);
-    }
-    if (isError) {
-      setSendError(true);
-      setShowForm(false);
-    }
-  }, [isSuccess, isError]);
 
   return (
     <div className="modal-container">
@@ -84,13 +70,13 @@ const Modal = ({ handleCloseModal = null }) => {
             </div>
           </>
         )}
-        {sendSuccess && (
+        {isSuccess && (
           <div className="result-msg">
             <h1 className="title">{t('contact.success.title')}</h1>
             <p>{t('contact.success.text')}</p>
           </div>
         )}
-        {sendError && (
+        {isError && (
           <div className="result-msg">
             <h1 className="title">{t('contact.error.title')}</h1>
             <p>{t('contact.error.text')}</p>
@@ -101,4 +87,4 @@ const Modal = ({ handleCloseModal = null }) => {
   );
 };
 
-export default Modal;
+export default ContactFormModal;

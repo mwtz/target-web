@@ -3,7 +3,7 @@ import { api } from 'services/api';
 
 const questionsApi = api.injectEndpoints({
   endpoints: builder => ({
-    question: builder.mutation({
+    sendQuestion: builder.mutation({
       query: question => ({
         url: endpoints.QUESTIONS,
         method: 'POST',
@@ -15,8 +15,8 @@ const questionsApi = api.injectEndpoints({
 });
 
 export const {
-  useQuestionMutation,
+  useSendQuestionMutation,
   endpoints: {
-    question: { matchFulfilled: questionFulfilled },
+    sendQuestion: { matchFulfilled: sendQuestionFulfilled },
   },
 } = questionsApi;

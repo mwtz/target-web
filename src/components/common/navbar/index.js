@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import routesPaths from 'routes/routesPaths';
-import Modal from 'components/modal';
+import ContactFormModal from 'components/contactFormModal';
 import menu from 'assets/menuicon.svg';
 import close from 'assets/close.svg';
 import './styles.scss';
@@ -28,7 +28,7 @@ const Navbar = () => {
           <button onClick={handleContact} className="contact">
             Contact
           </button>
-          {showContact && <Modal handleCloseModal={handleCloseModal} />}
+          {showContact && <ContactFormModal handleCloseModal={handleCloseModal} />}
         </div>
       )}
     </div>
