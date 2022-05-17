@@ -6,6 +6,7 @@ import Profile from 'pages/Profile';
 import CreateTarget from 'pages/createTarget';
 import EditTarget from 'pages/editTarget';
 import About from 'pages/about';
+import Chat from 'pages/chat';
 
 const routes = [
   {
@@ -37,6 +38,10 @@ const routes = [
   {
     path: routesPaths.about,
     component: <About />,
+  },
+  {
+    path: routesPaths.chat,
+    component: <Chat />,
   },
 ];
 

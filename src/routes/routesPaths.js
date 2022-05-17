@@ -6,6 +6,7 @@ const routesPaths = {
   newtarget: '/new-target',
   editTarget: '/edit-target',
   about: '/about',
+  chat: '/chat',
 };
 
 export default routesPaths;

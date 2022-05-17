@@ -1,0 +1,17 @@
+@import 'styles/styles.scss';
+
+.no-match {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  .message {
+    font-size: $font-size-subtitle;
+    font-weight: 600;
+    margin-top: rem(185px);
+    line-height: rem(32px);
+  }
+  .smiles {
+    margin-top: rem(185px);
+    width: rem(48px);
+  }
+}

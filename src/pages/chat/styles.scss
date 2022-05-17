@@ -1,0 +1,9 @@
+@import 'styles/styles.scss';
+
+.chat-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: rem(20px);
+  min-width: rem(357px);
+}
