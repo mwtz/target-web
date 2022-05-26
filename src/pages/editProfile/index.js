@@ -7,7 +7,6 @@ import { z } from 'zod';
 
 import Input from 'components/form/Input';
 import Select from 'components/form/select';
-import Navbar from 'components/common/navbar';
 import Button from 'components/common/Button';
 import routesPaths from 'routes/routesPaths';
 import useTranslation from 'hooks/useTranslation';
@@ -18,11 +17,12 @@ import { GENDER_OPTIONS, PASSWORD_REGEX } from 'constants/constants';
 
 import './styles.scss';
 
-const Signup = () => {
+const EditProfile = () => {
   const t = useTranslation();
   const dispatch = useDispatch();
   const { push } = useHistory();
   const { user, authenticated } = useAuth();
+  console.log(user);
   const [signup, { isLoading, isSuccess, error }] = useSignupMutation();
 
   const schema = z
@@ -62,13 +62,8 @@ const Signup = () => {
 
   useEffect(() => resetErrors, [resetErrors]);
 
-  if (authenticated) {
-    return <Redirect to={routesPaths.index} />;
-  }
-
   return (
     <div className="form">
-      <Navbar />
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <h1>{t('signup.title')}</h1>
         <label htmlFor="name">{t('signup.labels.name')}</label>
@@ -136,4 +131,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default EditProfile;

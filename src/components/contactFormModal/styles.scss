@@ -1,0 +1,98 @@
+@import 'styles/styles.scss';
+
+.modal-container {
+  background-color: $modal-background;
+  height: 100vh;
+  left: 0;
+  overflow: auto;
+  padding-top: rem(100px);
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 2;
+
+  .modal-content {
+    align-items: center;
+    background-color: $color-white;
+    border: 1px solid #888;
+    color: $color-black;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: rem(100px);
+    position: relative;
+    width: rem(800px);
+
+    .close-icon {
+      cursor: pointer;
+      position: absolute;
+      right: rem(24px);
+      top: rem(14px);
+    }
+
+    .smiles {
+      margin-top: rem(35px);
+      width: rem(133px);
+    }
+
+    .title {
+      font-size: $font-size-subtitle;
+      line-height: rem(23.44px);
+      margin-top: rem(17px);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      margin-top: rem(12px);
+      text-transform: uppercase;
+
+      form {
+        text-align: center;
+        width: rem(433px);
+
+        label {
+          font-size: $font-size-2;
+          font-weight: 600;
+          margin-bottom: rem(10px);
+        }
+
+        .message {
+          height: rem(155px);
+        }
+
+        .error {
+          border: rem(1px) solid $color-red;
+        }
+        .button-container {
+          align-self: center;
+          margin-bottom: rem(47px);
+          margin-top: rem(31px);
+          width: rem(180px);
+
+          .btn-send {
+            font-size: $font-size-2;
+            font-weight: bolder;
+          }
+        }
+        .error-message {
+          color: $color-red;
+          display: block;
+          font-size: $font-size-error;
+          margin-bottom: rem(15px);
+          margin-top: rem(10rem);
+          text-transform: none;
+        }
+      }
+      Input {
+        background-color: transparent;
+        font-size: $font-size-1;
+        margin-bottom: rem(10px);
+      }
+    }
+    .result-msg {
+      margin: rem(90px) auto rem(200px);
+      text-align: center;
+    }
+  }
+}

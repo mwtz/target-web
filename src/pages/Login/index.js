@@ -13,6 +13,7 @@ import useTranslation from 'hooks/useTranslation';
 import routesPaths from 'routes/routesPaths';
 import Input from 'components/form/Input';
 import Button from 'components/common/Button';
+import Navbar from 'components/common/navbar';
 import smileIcon from 'assets/smilies.svg';
 
 import './styles.scss';
@@ -55,6 +56,7 @@ const Login = () => {
 
   return (
     <div className="d-flex">
+      <Navbar />
       <div className="d-flex flex-column justify-content-start align-items-center login-form">
         <div className="d-flex flex-column align-items-center login-msg">
           <img src={smileIcon} alt="smileIcon" />
