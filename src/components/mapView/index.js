@@ -66,7 +66,7 @@ const MapView = () => {
           <Marker position={[lat, lon]} icon={userLocationIcon}></Marker>
         )}
 
-        {targets.length &&
+        {targets.length !== 0 &&
           targets.map((target, index) => {
             const { id, lat, lng, topic_id } = target;
             return (

@@ -46,7 +46,7 @@ const Profile = () => {
           </button>
         </div>
         <span className="separator" />
-        {targets.length ? (
+        {targets.length !== 0 ? (
           <>{conversations.length ? <ChatMatch matchs={conversations} /> : <NoMatch />}</>
         ) : (
           <NoTarget />

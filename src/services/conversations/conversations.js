@@ -10,8 +10,8 @@ const conversationsApi = api.injectEndpoints({
       }),
     }),
     getChat: builder.mutation({
-      query: id => ({
-        url: `${endpoints.MATCH_CONVERSATIONS}/${id}/messages?page=1`,
+      query: (id, page = 1) => ({
+        url: `${endpoints.MATCH_CONVERSATIONS}/${id}/messages?page=${page}`,
         method: 'GET',
       }),
     }),

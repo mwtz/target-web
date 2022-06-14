@@ -40,46 +40,23 @@
   }
   .chat-box {
     display: flex;
+    height: 100%;
     flex-direction: column;
-    margin-top: rem(20px);
+    overflow-y: scroll;
+    padding: 0;
     width: 100%;
-    .external-user,
-    .logged-user {
-      p {
-        border-radius: 8px;
-        font-size: $font-size-2;
-        max-width: 155px;
-        padding: rem(8px);
-      }
-    }
-    .logged-user {
-      align-self: flex-end;
-      display: flex;
-      flex-direction: row-reverse;
-      margin-right: rem(20px);
-      p {
-        background-color: $color-orange;
-        margin-left: rem(10px);
-        text-align: right;
-      }
-      .time {
-        align-self: self-end;
-        font-size: rem(9px);
-        margin-bottom: rem(20px);
-      }
-    }
-    .external-user {
-      align-self: flex-start;
-      display: flex;
-      margin-left: rem(20px);
-      p {
-        background-color: $color-light-grey;
-        margin-right: rem(10px);
-        text-align: left;
-      }
-      span {
-        font-size: rem(9px);
-      }
+  }
+  .input-container {
+    background-color: $color-light-grey;
+    bottom: 0;
+    display: flex;
+    padding: 20px;
+    width: 100%;
+    .message-input {
+      border: 2px solid $box-shadow;
+      height: rem(61px);
+      padding: rem(10px);
+      width: rem(324px);
     }
   }
 }
