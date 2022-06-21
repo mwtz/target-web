@@ -1,8 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { conversationsFulfilled } from 'services/conversations/conversations';
+import { getChatFulfilled, conversationsFulfilled } from 'services/conversations/conversations';
 
 const initialState = {
   conversations: [],
+  currentChat: [],
 };
 
 const conversationsSlice = createSlice({
@@ -12,6 +13,12 @@ const conversationsSlice = createSlice({
     builder.addMatcher(conversationsFulfilled, (_state, { payload: { matches } }) => {
       return {
         conversations: matches,
+      };
+    });
+    builder.addMatcher(getChatFulfilled, ({ conversations }, { payload: { messages } }) => {
+      return {
+        conversations,
+        currentChat: messages,
       };
     });
   },

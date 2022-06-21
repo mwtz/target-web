@@ -1,5 +1,4 @@
 import React from 'react';
-
 import useTranslation from 'hooks/useTranslation';
 import smiles from 'assets/smilies.svg';
 import football from 'assets/football.svg';

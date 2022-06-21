@@ -120,5 +120,6 @@
       "error":"Both fields are mandatory"
     }
   },
-  "noMatch": {"message": "There are not matches for your targets yet."}
+  "noMatch": {"message": "There are not matches for your targets yet."},
+  "chatConversation": {"header": "CHAT"}
 }

@@ -1,9 +1,62 @@
 @import 'styles/styles.scss';
 
-.chat-container {
+.conversation-container {
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin-top: rem(20px);
+  position: relative;
   min-width: rem(357px);
+  .chat-header {
+    align-items: center;
+    border-bottom: rem(2px) solid $color-light-grey;
+    display: flex;
+    justify-content: space-between;
+    height: rem(60.5px);
+    margin-top: rem(61px);
+    padding: rem(8px);
+    width: rem(339px);
+    .chat-avatar {
+      border-radius: 50%;
+      display: flex;
+      height: rem(30px);
+      margin-left: rem(20px);
+      width: rem(30px);
+    }
+    .info {
+      margin-left: rem(13px);
+      text-align: justify;
+      width: rem(203px);
+      .user-name {
+        font-size: $font-size-3;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      .topic-title {
+        font-size: $font-size-2;
+        margin: 0;
+      }
+    }
+  }
+  .chat-box {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    overflow-y: scroll;
+    padding: 0;
+    width: 100%;
+  }
+  .input-container {
+    background-color: $color-light-grey;
+    bottom: 0;
+    display: flex;
+    padding: 20px;
+    width: 100%;
+    .message-input {
+      border: 2px solid $box-shadow;
+      height: rem(61px);
+      padding: rem(10px);
+      width: rem(324px);
+    }
+  }
 }
